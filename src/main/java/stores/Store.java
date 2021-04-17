@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 public class Store {
     private String storeName;
     private ArrayList<Review> reviews;
+    private static int ratingCount = 0;
     private ArrayList<Menu> menus;
     public double ratingSum = 0;
     public int menuCount = 0;
@@ -44,8 +45,9 @@ public class Store {
     public double getAverageRating() {
         for (Review review : reviews) {
             ratingSum = ratingSum + review.getRating();
+            ratingCount++;
         }
-        averageRating = ratingSum / reviews.size();
+        averageRating = ratingSum / ratingCount;
         return averageRating;
     }
 

@@ -62,7 +62,7 @@ public class DeleteStoreCommand extends Command {
             int storeIndex = parser.parseInt(line, 1,
                     canteens.get(currentCanteenIndex).getNumStores()) - 1;
 
-            Store store = currentCanteen.getStore(currentCanteenIndex);
+            Store store = currentCanteen.getStore(storeIndex);
             String storeName = store.getStoreName();
             currentCanteen.deleteStore(storeIndex);
             ui.showDeleteStore(storeName);
